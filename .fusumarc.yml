@@ -1,0 +1,23 @@
+meta:
+  url: ""
+  name: "Crash course teorico-pratico al Machine Learning con TensorFlow 2.0"
+  author: "Paolo Galeone"
+  thumbnail:
+  description: ""
+  sns:
+slide:
+  loop: false
+  sidebar: true
+  targetBlank: true
+  showIndex: true
+  isVertical: false
+  math: true
+  code:
+    languages:
+      - python
+    plugins:
+      - line-numbers
+    theme: default
+extends:
+  js:
+  css: style.css

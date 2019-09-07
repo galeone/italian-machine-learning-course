@@ -1,0 +1,18 @@
+<!-- https://fablabparma.org/events/machine-learning-workshop/ -->
+
+## PROGRAMMA
+
+Corso teorico-pratico per apprendere le basi del mondo del Machine Learning e per imparare a sviluppare applicazioni di intelligenza artificiale utilizzando la nuova versione di TensorFlow.  Il corso comprenderà una parte pratica di sviluppo di codice di reti neurali artificiali in TensorFlow 2.0.
+
+- Introduzione al machine learning: cos’è il machine learning, cosa sono i dataset, introduzione alle reti neurali, loss function, il processo di apprendimento (gradient descent ed ottimizzazione).
+- Introduzione a TensorFlow 2.0 e TensorFlow Datasets (tfds): ottenere e processare un dataset in Python e TensorFlow, realizzare un classificatore con una rete fully connected.
+- Introduzione alle reti neurali convoluzionali (CNN): operazione di convoluzione, convoluzione tra volumi, implementazione di un classificatore di immagini
+- Reti neurali per classificazione e localizzazione: introduzione ed implementazione in TensorFlow 2.0.
+
+## OBIETTIVI
+
+I partecipanti impareranno le basi teoriche del Machine Learning e faranno pratica sul nuovo framework TensorFlow 2.0. Al termine del corso avranno mosso i primi passi nello sviluppo di reti neurali artificiali in TensorFlow 2.0 e avranno la base teorica per poter approfondire gli argomenti più avanzati di Machine Learning e Intelligenza Artificiale.
+
+## DURATA
+
+4+4 ore.
