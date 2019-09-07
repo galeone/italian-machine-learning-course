@@ -3,10 +3,8 @@
 # Introduzione al Machine Learning
 <br />
 
-Crash course teorico pratico.
+Crash course teorico-pratico
 
-
-Durata totale: 8 ore
 <br />
 Docente: Paolo Galeone
 

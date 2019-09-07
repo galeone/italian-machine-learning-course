@@ -55,6 +55,10 @@ Ma come è possibile che questo accada?
 Per un computer un'immagine non è altro che un insieme ordinato di vettori 3D (componenti RGB) posti uno accanto all'altro.
 
 ---
+## Apprendere dai dati
+<!-- sectionTitle: Apprendere dai dati-->
+
+---
 
 L'algoritmo (**modello**) usato dall'applicazione è stato **allenato** per identificare un **pattern** (il volto).
 
@@ -137,11 +141,140 @@ Esempio cani e gatti - classificazione.
 
 ---
 
+### Epoche di training
+<br />
+
+Gli algoritmi di ML sono algoritmi iterativi che lavorano sul **training set**.
+
+Ogni volta che il training set è stato osservato completamente dall'algoritmo, diciamo che è passata **un'epoca**.
+
+---
+
+## Spazi n-dimensionali
+
+Gli spazi n-dimensionali sono un modo di modellare dataset contenenti esempi con **n** attributi ognuno.
+
+Ogni esempio $e_i$ è completamente descritto dai suoi **n** attributi $ x_{j=0}, \cdots, x_{n-1} $.
+<br />
+
+$$ e_i = (x_0, x_1, \cdots, x_{n-1}) $$
+
+---
+
+Un'utile intuizione è quella di pensare ad ogni singolo esempio del dataset come se fosse **una riga in un dataset**, dove gli **attributi sono le colonne**.
+<br />
+
+**ESEMPIO**: un immagine 28 x 28 in scala di grigi ha esattamente 28 x 28 = 284 distinti attributi (colonne).
+
+---
+
+> Il concetto di dimensione si sviluppa nel momento in cui iniiamo a pensare agli esempi come se fossero punti in uno spazio **n**-dimensionale univocamente identificati dai loro attributi.
+
+Pensando ai dati in questo modo, è possibile calcolare relazioni geometriche come la **distanza**.
+
+---
+
+## Iris Dataset
+
+Per comprendere al meglio il concetto di dimensione, useremo il noto "Iris Dataset".
+
+Il dataset contiene 3 classi, e 50 esempi per classe. La classe è il tipo di fiore. Gli attribtui sono tutti continui, ad eccezione per la classe/label.
+
+---
+
+- lunghezza del petalo (cm)
+- altezza del petalo (cm)
+- lunghezza del sepalo (cm)
+- altezza del sepalo (cm)
+- classe: setosa, versicolor, virginica
+
+![](images/versicolor.jpg)
+
+---
+
+**Question time**: quante dimensioni ha questo dataset?
+
+---
+
+Avendo ogni esempio 4 attributi (più l'informazione della classe) è già difficile visualizzare tutta l'informazione assieme sullo stesso grafico.
+
+<br />
+
+Come visualizziamo 4 dimensioni sullo stesso grafico? E invece 284?
+
+<br />
+
+---
+
+Per un dataset a bassa dimensionalità come l'Iris, possiamo ricorrdere ad una tecnica **manuale** di visualizzazione dei dati, che che ci permette di avere un'idea del dataset con il quale stiamo lavorando.
+
+Come prima cosa, assegniamo un colore distinto ad ogni diversa classe:
+
+- Setosa = blu
+- Versicolor = verde
+- Virginica = rosso
+
+E successivamente visualizziamo le relazioni tra le features **a coppie**.
+
+---
+
+![](images/iris1.png)
+
+---
+
+![](images/iris2.png)
+
+---
+
+Quest'ultimo grafico, mostra che **esistono tre partizioni naturali (cluster)** nel dataset e che per trovarle possiamo usare i soli due attributi "petal widht" e "petal lenght".
+
+<br />
+
+*Ma tutto questo è stato fatto in maniera manuale e "visiva".*
+
+---
+
+> L'obiettivo degli algoritmi di classificazione è di apprendere autonomamente quali sono le **feature** (caratteristiche, dimensioni) discriminative, così da **apprendere una funzione** in grado di classificare correttamente elementi apparteneti a classi differenti.
+
+---
+
 ## Apprendimento Supervisionato
 <!-- sectionTitle: Apprendimento Supervisionato -->
 
 ![](/images/supervised-learning.png)
 
-TODO
+---
 
-## 
+### Modelli parametrici e non parametrici
+
+<br />
+
+È possibile classificare gli algoritmi di machine learning (supervisionato e non) in base alla presenza di **parametri apprendibili** o meno, all'interno del modello.
+
+- **Algoritmi non parametrici**: sono una maniera classica di affrontare il problema di classificazione/regressione. Il più comune algoritmo di non parametrico è il **k-NN** (k-Nearest-Neighbours).
+- **Algoritmi parametrici**: hanno bisogno di un processo di **train** durante il quale **modificano il valore dei loro parametri** per adattarsi al dataset e risolvere il task.
+
+---
+
+### L'algoritmo k-NN
+
+L'algoritmo si basa sul concetto di **distanza**.
+
+Per classificare un nuovo elemento (punto p), abbiamo bisogno di misurare la **distanza** di p rispetto a **ogni elemento del dataset**.
+
+$$ || p - q_i || = \left( \sum_{j=0}^{D-1}|p_{j}-q_{i,j}|^{p}\right)^\frac{1}{p} $$
+
+---
+
+- Quando k-NN è applicato a problemi di classificazione, il punto p viene classificato in base al voto dei syou k vicini
+- Quand k-NN è applicato a problemi di regressione, l'output dell'algoritmo è la media dei k-NN.
+
+---
+
+#### Modelli parametrici
+
+<br />
+
+Dato un valore di input $x = (x_0, x_1, \cdots, x_n)$ e la sua label associata $y$, definiamo modello parametrico la funzione $f_\theta$ dove $\theta$ è l'insieme dei parametri da cambiare durante la fase di training per "adattarsi ai dati" (fit the data).
+
+---
