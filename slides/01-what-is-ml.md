@@ -271,7 +271,7 @@ $$ || p - q_i || = \left( \sum_{j=0}^{D-1}|p_{j}-q_{i,j}|^{p}\right)^\frac{1}{p}
 
 ---
 
-#### Modelli parametrici
+### Modelli parametrici
 
 <br />
 
