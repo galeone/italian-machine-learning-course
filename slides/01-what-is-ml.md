@@ -278,3 +278,33 @@ $$ || p - q_i || = \left( \sum_{j=0}^{D-1}|p_{j}-q_{i,j}|^{p}\right)^\frac{1}{p}
 Dato un valore di input $x = (x_0, x_1, \cdots, x_n)$ e la sua label associata $y$, definiamo modello parametrico la funzione $f_\theta$ dove $\theta$ è l'insieme dei parametri da cambiare durante la fase di training per "adattarsi ai dati" (fit the data).
 
 ---
+
+L'esempio più semplice ed intuitivo di modello parametrico è la **regressione lineare**.
+
+![linear regression](images/linear-regression.png)
+
+---
+
+Questo modello tenta di modellare la relazione tra due variabili (dipendente y, e indipendente x), "fittando" l'equazione di una retta ai dati osservati.
+
+$$ f_\theta: y = mx è b $$
+
+I parametri sono $ \theta = \{m,b\}
+
+**Question time**: che assunzioni stiamo facendo sui dati?
+
+---
+
+Il metodo **iterativo**, standard de-facto, per trovare i valori dei parametri è il **metodo dei minimi quadrati**.
+
+Questo metodo calcola la linea che "meglio fitta" i dati, **minimizzando** la somma dei quadrati delle distanze tra i punti e la linea stimata all'iterazione precedente.
+
+---
+
+### Loss function
+
+La funzione che lega i dati osservati e quelli predetti, è detta **loss function** (funzione perdita).
+
+L'obiettivo di ogni algoritmo di machine learning espresso come algoritmo di ottimizzazione (come vedremo a breve) è quello di **minimizzare la perdita**.
+
+---
