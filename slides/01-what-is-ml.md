@@ -301,6 +301,38 @@ Questo metodo calcola la linea che "meglio fitta" i dati, **minimizzando** la so
 
 ---
 
+> L'obiettivo degli algoritmi di apprendimento supervisionato, è quello di iterativamente "aggiustare" i parametri $ \theta $ in modo tale che $f_\theta$ modelli correttamente il _fenomeno osservato_.
+
+---
+
+Modellare un fenomeno usando un modello parametrico con una equazione nota è OK quando abbiamo la certezza che i il fenomeno abbia un andamento lineare e le variabili da considerare siano solo 2.
+
+---
+
+Ma se il numero di variabili (le dimensioni del dataset) è molto maggiore, e non abbiamo alcuna informazione su come i dati si dispongano (se linearmente, o esponenzialmente, o formino cluster, ...) usare un modello di questo tipo **non** porta a buoni risultati.
+
+---
+
+In questi casi, modelli con un numero **molto grande di parametri** come le **reti neurali** possono essere usati, in quanto questi modelli sono **approssimatori universali** in gradi di modellare ogni funzione, e quindi apprendere una funzione incognita che fitti il dataset.
+
+---
+
+Usare modelli con molti parametri può sembrare la soluzione perfetta, ma nella pratica, avere modelli molto flessibili può portare a risultati patologici come l'**overfitting**.
+
+---
+
+#### Condizioni patologiche
+
+![over-under](images/over_under.png)
+
+---
+
+<!--- TODO: metriche? --->
+
+---
+
+---
+
 ### Loss function
 
 La funzione che lega i dati osservati e quelli predetti, è detta **loss function** (funzione perdita).
