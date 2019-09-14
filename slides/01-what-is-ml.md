@@ -28,13 +28,13 @@ Le applicazioni del Machine Learning sono infinite. Siamo circondati da applicaz
 
 ### Sistemi di raccomandazione
 
-TODO
+![recsys](images/recsys-amazon.png)
 
 ---
 
 ### Plate Recongnition
 
-TODO
+![plate](images/plate-recognition.jpg)
 
 ---
 
@@ -323,22 +323,156 @@ Usare modelli con molti parametri può sembrare la soluzione perfetta, ma nella 
 
 ---
 
-#### Condizioni patologiche
+### Condizioni patologiche
 
 ![over-under](images/over_under.png)
 
 ---
 
-<!--- TODO: metriche? --->
+<!-- sectionTitle: Misurare le performance: le metriche-->
+## Misurare le performance: le metriche
 
 ---
 
+Misurare le performance di un algoritmo di apprendimento supervisionato durante la fase di validazione e test è parte **essenziale** di ogni pipeline di ML ben fatta.
+
+<br />
+
+- È possibile misurare le performance del modello su ogni split del dataset
+- Al termine di ogni epoca è raccomadabile misurare le performance sul dataset di train e validation
+- Le metriche misurate sui diversi dataset vanno rappresentate sullo **stesso grafico**
+- Le differenze tra le performance di train e validation ci indicano se il modello soffre di condizioni patologiche.
+
 ---
 
-### Loss function
+Gli algoritmi di apprendimento supervisionato hanno l'**enorme vantaggio** di avere all'interno del dataset **le label** e le metriche usano le label per esprimere *"quanto bene"* l'algoritmo sta apprendendo.
+
+La prima metrica presentata è l'accuratezza (accuracy).
+
+---
+
+#### Accuracy
+
+<br />
+
+L'accuracy è esattamente quello che la parole stessa esprime: quanto accurato il modello è stato nel predire il risultato corretto.
+
+<br />
+
+![formula](images/accuracy.png)
+
+<br />
+
+**Question time**: l'accuracy è una buona metrica se il dataset è sbilanciato?
+
+*Un dataset è sbilanciato quando il numero di elementi per classe è molto diverso*
+
+---
+
+#### Confusion matrix
+
+<br />
+
+È una rappresentazione tabellare delle performance di un classificatore.
+
+![confusion matrix](images/confusion-matrix.gif)
+
+La matrice di confusione **non è una metrica**, ma è uno strumento necessario per calcolare altre metriche.
+
+---
+
+La matrice di confusione contiene:
+
+<br />
+
+- **TP** (True Positives): Tutte le istanze di A classificate come A
+- **TN** (True Negatives): Tutte le non istanze di A non classificate come A
+- **FP** (False Positives): Tutte le non istanze di A classificate come A
+- **FN** (False Negatives): Tutte le istanze di A non classificate come A
+
+---
+
+#### Precision
+
+<br />
+
+La precision è un numero in $[0,1]$ che misura quanto è accurato il classificatore.
+
+<br />
+
+$$ \frac{TP}{TP + FP} $$
+
+---
+
+#### Recall
+
+<br />
+
+La recall è un numero in $[0,1]$ che misura la percentuale di elementi correttamente classificati, sul totale degli elementi di quella classe.
+
+<br />
+
+$$ \frac{TP}{TF + FN} $$
+
+---
+
+#### Mean absolute error
+
+MAE (errore medio assouto) è la media delle differenza assolute tra il valore (classe, o valore numerico) reale e quello predetto.
+
+È una metrica applicabile anche ai classificatori, ma usualmente viene usata per i **regressori**.
+
+<br />
+
+$$ \frac{1}{N} \sum_{i=1}^{N}{|y_i - \hat{y}_i|} $$
+
+<br />
+
+Il suo valore è tra $[0, \infty]$.
+
+---
+
+#### Mean squared error
+
+<br />
+
+MSE (errore quadratico medio) è la media delle differenze al quatrato tra il valore reale e quello predetto.
+
+<br />
+
+$$ \frac{1}{N} \sum_{i=1}^{N}{(y_i - \hat{y}_i)^{2}} $$
+
+<br />
+
+Il suo valore è tra $[0, \infty]$.
+
+---
+
+Metriche come **MAE** e **MSE** esprimono una relazione diretta tra valori reali e valori predetti.
+
+Questa relazione è, solitaente, anche l'obiettivo che vogliamo **minimizzare** durante il processo di **ottimizzazione**.
+
+----
+
+#### Loss function
 
 La funzione che lega i dati osservati e quelli predetti, è detta **loss function** (funzione perdita).
 
 L'obiettivo di ogni algoritmo di machine learning espresso come algoritmo di ottimizzazione (come vedremo a breve) è quello di **minimizzare la perdita**.
 
+<br /> <br />
+
+Dopo questa introduzione ai *concetti fondamentali* del Machine Learning, possiamo dedicarci al modello più diffuso ed utilizzato, le reti neurali, e comprendere come il processo di apprendimento di questo modello parametrico viene effettuato.
+
 ---
+
+<!-- sectionTitle: Reti Neurali -->
+
+## Reti Neurali
+
+---
+
+### Neuroni biologici e artificiali
+
+![neuronz](images/biological-artificial.png)
+
