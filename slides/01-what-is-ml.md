@@ -40,7 +40,7 @@ TODO
 
 ### Face Detection
 
-![](/images/face-detection.png)
+![face detection](images/face-detection.png)
 
 ---
 
@@ -131,7 +131,7 @@ Esempio cani e gatti - classificazione.
 
 ### Dataset Split
 
-![](images/datset-split.png)
+![dataset split](images/dataset-split.png)
 
 ---
 
@@ -188,7 +188,7 @@ Il dataset contiene 3 classi, e 50 esempi per classe. La classe è il tipo di fi
 - altezza del sepalo (cm)
 - classe: setosa, versicolor, virginica
 
-![](images/versicolor.jpg)
+![versicolor](images/versicolor.jpg)
 
 ---
 
@@ -218,11 +218,11 @@ E successivamente visualizziamo le relazioni tra le features **a coppie**.
 
 ---
 
-![](images/iris1.png)
+![iris 1](images/iris1.png)
 
 ---
 
-![](images/iris2.png)
+![iris 2](images/iris2.png)
 
 ---
 
@@ -241,7 +241,7 @@ Quest'ultimo grafico, mostra che **esistono tre partizioni naturali (cluster)** 
 ## Apprendimento Supervisionato
 <!-- sectionTitle: Apprendimento Supervisionato -->
 
-![](/images/supervised-learning.png)
+![supervised learning](images/supervised-learning.png)
 
 ---
 
@@ -287,9 +287,11 @@ L'esempio più semplice ed intuitivo di modello parametrico è la **regressione 
 
 Questo modello tenta di modellare la relazione tra due variabili (dipendente y, e indipendente x), "fittando" l'equazione di una retta ai dati osservati.
 
-$$ f_\theta: y = mx è b $$
+$$ f_\theta: y = mx + b $$
 
-I parametri sono $ \theta = \{m,b\}
+I parametri sono $ \theta = \{m,b\} $
+
+<br />
 
 **Question time**: che assunzioni stiamo facendo sui dati?
 
