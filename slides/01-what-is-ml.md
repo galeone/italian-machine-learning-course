@@ -482,11 +482,168 @@ Dopo questa introduzione ai *concetti fondamentali* del Machine Learning, possia
 - **Sinapsi**: i pesi associati ai dendriti. Questi sono i **parametri** che cambiano durante la fase di training.
 - Assone: è il valore di output, dopo essere stato processto dal nucleo.
 
+---
+
 #### Nucleo
 
 <br />
 
 Una funzione che lega l'input con i pesi associati alle sinapsi. Per simulare il comportamento del neuorne biologico (attivarsi con determinati stimoli di input), il nucleo è modellato usando una **funzione non lineare** $f$.
 
+<br />
+
 $$ O = f \left(\sum_{i=0}^{D-1}{x_i w_i + b}\right) $$
 
+---
+
+#### Non linearità
+
+Un percettrone (perceptron), è una rete neurale composta da diversi neuroni **lineari**.
+
+Un pereptron può classificare esempi in uno spazio D-dimensionale **se e solo se** gli esempi sono linearmente separabili (apprendere un iperpiano decisionale).
+
+La **non linearità**, invece, **trasforma** l'iperpiano in una generica **ipersuperficie**.
+
+---
+
+![non-linear](images/activation_fns.png)
+
+---
+
+
+##### Il bias
+
+Spesso dimenticato, ma **di fondamentale importanza**, è il termine che permette di apprendere (nel caso lineare) iperpiani **non centrati nell'origine**.
+
+![no bias](images/no-bias.png)
+
+---
+
+![yes bias](images/yes-bias.png)
+
+---
+
+#### Perché le reti neurali?
+
+A differenza dei metodi tradizionali, le reti neurali sono estremamente **flessibili**.
+
+Un singola rete neurale (input -> rete -> output) è in grado al massimo di trovare una singola ipersuperfificie, e quindi apprendere un solo decision boundary.
+
+![single-layer](images/single-layer.png)
+
+---
+
+Mettendo in cascata (**creando una rete deep**) diversi layer di neuoroni, è possibile (layer dopo layer) trasformare e combinare i diversi confini decisionali appresi, fino all'apprendimento di una funzione in grado di separare correttamente i dati.
+
+---
+
+#### Importante
+
+Le reti neurali sono approssimatori di funzioni universali.
+
+Apprendiamo, quindi **una funzione** che può essere vista come una generica **trasformazione** da un dominio (ad una determinata dimensione), ad un altro (solitamente ad una dimensione ridotta).
+
+<br />
+
+Apprendere trasofmrazioni da uno spazio all'altro e **molto potente** in quanto permette di **ridurre la complessità** dei problemi, trasferendoli da un dominio altamente dimensionale ad uno bassa dimensionalità.
+
+---
+
+### Reti complementamente connesse
+
+![multi-layer](images/multi-layer.png)
+
+---
+
+$$ x = \begin{pmatrix}x_0\\ x_1 \\ \cdots \\ x_{D-1} \end{pmatrix} , W \in \mathbb{M}_{M \times D-1} , b = \begin{pmatrix}b_0\\ b_1 \\ \cdots \\ b_{M-1} \end{pmatrix} $$
+
+<br />
+
+L'output di un layer complemtamente connesso che **trasforma** un input **D-dimensionale** in un valore **M-dimensionale** è dato da:
+
+<br />
+
+$$ O = f(Wx + b) $$
+
+---
+
+## Ricapitoliamo
+
+- Il dataset è composto da dati, che possono essere visti come punti in uno spazio D-dimensionale.
+- Un percettrone è in grado di separare correttamente solo dati che sono linearmente separabili.
+- Aggiungere la non linearità rende il percettrone in grado di separare dati non linearmente separabili, ma **deforma il confine decisionale**.
+- Mettere in cascata (**rete deep**) più layer di neuorni, permette di **ridurre la dimensionalità**, e apprendere migliori confini decisionali.
+- È possibile variare la **topologia** delle reti (come vedremo).
+
+---
+
+> Dopo aver definito i dati e l'architettura: come possiamo allenare la nostra rete per apprendere la funzione incognita?
+
+---
+
+## Apprendimento ed ottimizzazione
+
+---
+
+### La loss function
+
+È una funzione usata per mettere in relazione **l'output del modello** con la **predizione desiderata**.
+
+<br />
+
+Di loss function "standard" ne esistono diverse, ognuna delle quali influenza la qualità delle predizioni del modello.
+
+---
+
+Per un problema di **classificazione** su $ M $ classi distinte, possiamo modellare la rete neurale come una funzione che dato un input D-dimensionale produce un vettore M-dimensionale di predizioni, in funzione dei suoi parametri $W$.
+
+<br />
+
+$$ \hat{y} = F_W(x) : \mathbb{R}^D \rightarrow \mathbb{R}^{M} $$
+
+---
+
+Ottenere la **label predetta** a partire dal vettore M-dimensionale è banale:
+
+<br />
+
+$$ \hat{l} = \argmax_{0 \le i \le M-1}{\hat{y}_{i}} $$
+
+<br />
+
+Ma come possiamo specificare (dare in pasto alla loss function) la label presente nel dataset per il dato di input?
+
+---
+
+Si potrebbe usare direttamente il valore della label stessa (non fatelo).
+
+<br />
+
+Oppure si può **codificare** la label usando la rappresentazione 1-hot. (1-hot encoding).
+
+$$ y = \begin{pmatrix}y_0\\ y_1 \\ \cdots \\ y_{M-1} \end{pmatrix} : y_i = \begin{cases} 1, &\text{se i = posizione assegnata a l} \\ 0, &\text{altrimenti} \end{cases} $$
+
+---
+
+La formulazione generale della loss function tra valore predetto $\hat{y}$ e valore reale one-hot encodato $y$ è:
+
+<br />
+
+$$ \mathcal{L}_i (y, \hat{y}): \mathbb{N}^{M} \times \mathbb{R}^{M} \rightarrow \mathbb{R} $$
+
+<br />
+
+Per un dataset di $k$ elementi, il valore della loss è il valore medio:
+
+<br />
+
+$$ \mathcal{L}(F;\text{dataset}) = \frac{1}{k}\sum_{i=1}^{k}{\mathcal{L}_{i}(y, \hat{y})} $$
+
+---
+
+La formulazione della loss dipende dal problema, ma la più intuitiva (e frequentemente utilizzata) tra le loss è la **distanza euclidea** (L2 loss).
+
+
+$$ \mathcal{L} = \frac{1}{k}\sum_{i=1}^{k}{||\hat{y}_i - y_i ||_{2}} $$
+
+---
