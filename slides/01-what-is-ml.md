@@ -476,3 +476,17 @@ Dopo questa introduzione ai *concetti fondamentali* del Machine Learning, possia
 
 ![neuronz](images/biological-artificial.png)
 
+---
+
+- **Dendriti**: numero di input che il neurone accetta; dimensione del dato di input.
+- **Sinapsi**: i pesi associati ai dendriti. Questi sono i **parametri** che cambiano durante la fase di training.
+- Assone: è il valore di output, dopo essere stato processto dal nucleo.
+
+#### Nucleo
+
+<br />
+
+Una funzione che lega l'input con i pesi associati alle sinapsi. Per simulare il comportamento del neuorne biologico (attivarsi con determinati stimoli di input), il nucleo è modellato usando una **funzione non lineare** $f$.
+
+$$ O = f \left(\sum_{i=0}^{D-1}{x_i w_i + b}\right) $$
+
