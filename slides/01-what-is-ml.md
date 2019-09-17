@@ -480,7 +480,8 @@ Dopo questa introduzione ai *concetti fondamentali* del Machine Learning, possia
 
 - **Dendriti**: numero di input che il neurone accetta; dimensione del dato di input.
 - **Sinapsi**: i pesi associati ai dendriti. Questi sono i **parametri** che cambiano durante la fase di training.
-- Assone: è il valore di output, dopo essere stato processto dal nucleo.
+- **Assone**: è il valore di output, dopo essere stato processto dal nucleo.
+- **Nucleo**: (prossima slide)
 
 ---
 
@@ -647,3 +648,130 @@ La formulazione della loss dipende dal problema, ma la più intuitiva (e frequen
 $$ \mathcal{L} = \frac{1}{k}\sum_{i=1}^{k}{||\hat{y}_i - y_i ||_{2}} $$
 
 ---
+
+### Ottimizzazione
+
+<br />
+
+La ricerca operativa ci offre metodi per trovare la soluzione di un problema di ottimizzazione dove la funzione da ottimizzare ha caratteristiche ben definite (e.g. è convessa).
+
+<br />
+
+Le reti neurali sono approssimatori universali, quindi non possiamo fare alcuna considerazione che sfrutti la geometria della funzione.
+
+Di conseguenza...
+
+---
+
+> Non è possibile usare i tradizionali metodi offerti dall ricerca operativa per ottimizzare (minimizzare) la loss function.
+>
+> È dunque necessario procedere alla ricerca della soluzione in maniera **iterativa**, partendo da una soluzione iniziale e rifinendola ad ogni step (fase di train del modello).
+
+---
+
+Abbiamo due alternative per ricercare l'ottimo della funzione:
+
+<br />
+
+1. **Perturbazioni casuali**: si applica una perturbazione $\Delta W$ al set di parametri corrente, si valuta il valore della loss dopo aver applicato la perturbazione $L(\text{dataset}, W + \Delta W)$ e se il valore è minore del precedente, si aggiornano i parametri.
+
+2. **Stima della direzione dell'aggiornamento**: anziché generare un nuovo set di parametri in maniera causauale, è possibile **guidare** il processo di ricerca dell'ottimo nella **direzione di massima discesa della funzione**.
+
+<br />
+
+La soluzione iniziale del problema è il set di parametri $W$ della rete neurale.
+
+---
+
+### Scelta della soluzione iniziale
+
+<br />
+
+Non esiste un unico modo di inizializzare i parametri, ma esisono due suggerimenti che ogni inizializzazione deve rispettare:
+
+<br />
+
+- **Non inizializzare i parametri a zero**: rende impossibile trovare una nuova soluzione usando gradient descent (vedi dopo)
+- **Rompere la simmetria**: due hidden units (neuroni nello stesso layer) che condividono lo stesso input devono essere inizializzati con **valori diversi**.
+
+---
+
+### Gradient Descent
+
+<br />
+
+Per una funzione in una variabie, l'operazione di derivata ci descrive il comportamento della funzione $f$ valutata in un intorno infinitamente piccolo centrato su $x$.
+
+<br />
+
+$$ \frac{d f(x)}{dx} = \lim_{h \rightarrow 0}\frac{f(x + h) - f(x)}{h} $$
+
+<br />
+
+La generalizzazione dell'operazione per una funzione a n-variabili è data dal gradiente:
+
+$$ \nabla \mathcal{L}(W) = (\frac{d L}{d w_1}, \cdots, \frac{d L}{d w_n}) $$
+
+<br />
+
+Il gradiente indica **la direzione lungo la quale la funzione cresce**, quindi:
+
+<br />
+
+$$ d = - \nabla \mathcal{L}(W) $$
+
+---
+
+## Batch Gradient Descent
+
+La regola di **aggiornamento dei parametri** diventa dunque:
+
+<br />
+
+$$ W \leftarrow W - \mu \nabla \mathcal{L}(\text{dataset}; W) $$
+
+dove $\mu$ è il **learning rate**.
+
+Il learning rate è un **iperparametro** e sceglierlo è **difficile**.
+
+
+---
+
+## Mini-batch Gradient Descent
+
+Anziché calcolare il valore della loss function su tutto il dataset (difficilamente applicabile nella realtà, quando i dataset sono enormi), la loss si calcola iterativamente su dei mini-batch (di cardinalità $b$).
+
+<br />
+
+$$ W \leftarrow W - \mu \nabla \mathcal{L}((x_{[i, i+b]}, y_{[i, i+b]}); W) $$.
+
+---
+
+## Algoritmi di ottimizzazione
+
+Esisono diversi algoritmi di ottimizazione, i quali differiscono per la regola di aggiornamento dei parametri.
+
+- **Vanilla Gradient Descent**: (precedentemente spiegato), stima la direzione dell'aggiornamento usando il gradiente e applica aggiornamenti "grandi tanto quanto il learning rate".
+- **Momentum update**: "limita" la dimensione dell'aggiornamento usando un termine di "attrito" 
+- E molti altri (la loro descrizione va oltre la complessità del corso).
+
+![update-surface](images/update-surface.png)
+
+---
+
+## Domande
+
+1. Dataset split: quali e perché.
+2. Cos'è un epoca?
+3. Differenze tra modelli parametrici e non parametrici.
+4. Descrivi l'algoritmo k-NN.
+5. Overfitting e underfitting: sono condizioni patologiche, perché? Quando si verificano?
+6. La matrice di confusione è una metrica?
+7. Cosa misurano precision e recall?
+8. Descrivi la struttura (usando la formula) di un neurone artificiale.
+9. Perché la non linearità è importante?
+10. Il termine di bias, perchè è necessario inserirlo?
+11. Reti neurali completamente connesse: cosa accade layer-dopo-layer all'input?
+12. Loss function: perché è necessaria? Cosa misura?
+13. Soluzione iniziale al problema di minimizzazione: che regole seguire?
+14. Descrivi la regola di aggiornamento "vanilla", nel caso batch e mini-batch.
