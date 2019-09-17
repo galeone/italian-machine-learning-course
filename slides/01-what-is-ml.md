@@ -759,6 +759,12 @@ Esisono diversi algoritmi di ottimizazione, i quali differiscono per la regola d
 
 ---
 
+![cool](images/loss_surface.gif)
+
+Per approfondire [Algoritmi di ottimizzazione per il training delle reti neurali](https://talks.pgaleone.eu/Algoritmi%20di%20ottimizzazione%20per%20il%20training%20delle%20reti%20neurali/optalgo.slide#1)
+
+---
+
 ## Domande
 
 1. Dataset split: quali e perché.
