@@ -168,9 +168,11 @@ Un'utile intuizione è quella di pensare ad ogni singolo esempio del dataset com
 
 ---
 
-> Il concetto di dimensione si sviluppa nel momento in cui iniiamo a pensare agli esempi come se fossero punti in uno spazio **n**-dimensionale univocamente identificati dai loro attributi.
+> Il concetto di dimensione si sviluppa nel momento in cui iniziamo a pensare agli esempi come se fossero punti in uno spazio **n**-dimensionale univocamente identificati dai loro attributi.
 
 Pensando ai dati in questo modo, è possibile calcolare relazioni geometriche come la **distanza**.
+
+![cube](images/n-cube.png)
 
 ---
 
@@ -266,7 +268,11 @@ $$ || p - q_i || = \left( \sum_{j=0}^{D-1}|p_{j}-q_{i,j}|^{p}\right)^\frac{1}{p}
 
 ---
 
-- Quando k-NN è applicato a problemi di classificazione, il punto p viene classificato in base al voto dei syou k vicini
+![knn](images/knn.jpg)
+
+---
+
+- Quando k-NN è applicato a problemi di classificazione, il punto p viene classificato in base al voto dei suoi k vicini
 - Quand k-NN è applicato a problemi di regressione, l'output dell'algoritmo è la media dei k-NN.
 
 ---
@@ -300,6 +306,8 @@ I parametri sono $ \theta = \{m,b\} $
 Il metodo **iterativo**, standard de-facto, per trovare i valori dei parametri è il **metodo dei minimi quadrati**.
 
 Questo metodo calcola la linea che "meglio fitta" i dati, **minimizzando** la somma dei quadrati delle distanze tra i punti e la linea stimata all'iterazione precedente.
+
+![linear regression error](images/linear-regression-error.png)
 
 ---
 
