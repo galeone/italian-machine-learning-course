@@ -634,7 +634,7 @@ $$ y = \begin{pmatrix}y_0\\ y_1 \\ \cdots \\ y_{M-1} \end{pmatrix} : y_i = \begi
 
 ---
 
-La formulazione generale della loss function tra valore predetto $\hat{y}$ e valore reale one-hot encodato $y$ è:
+La formulazione generale della loss function tra valore predetto $\hat{y}$ e valore reale in codifica one-hot $y$ è:
 
 <br />
 

@@ -57,3 +57,10 @@ Computer engineer | Head of ML & CV @ ZURU Tech Italy | Machine Learning GDE
 - Migliorare il classificatore di immagini usando le CNN
 - Introduzione all'object detection
 - Implementazione di un classificatore e localizzatore di oggetti
+
+---
+
+## Agenda
+
+- 28/09 prima parte  + seconda parte
+- 05/10 terza parte
