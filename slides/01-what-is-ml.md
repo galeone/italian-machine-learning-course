@@ -789,3 +789,9 @@ Per approfondire [Algoritmi di ottimizzazione per il training delle reti neurali
 12. Loss function: perché è necessaria? Cosa misura?
 13. Soluzione iniziale al problema di minimizzazione: che regole seguire?
 14. Descrivi la regola di aggiornamento "vanilla", nel caso batch e mini-batch.
+
+---
+
+Introduzione a TensorFlow 2.0 e TensorFlow Datasets
+
+- Colab: https://bit.ly/2lno7O5
