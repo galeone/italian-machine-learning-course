@@ -67,8 +67,41 @@ Per poter capire perché è bene apprendere questi filtri, è prima necessario c
 ## L'operazione di convoluzione
 
 
-La convoluzione è una operazione tra due segnal
+In **teoria dei segnali** l'operazione di convoluione è usata per studiare la rispotsa di un iustema fisico quando un determinato segnale è applicato al suo input.
 
+Senza dilungarsi nella teoria, quel che è necessario sapere è che:
+
+- L'operazione di convoluzione tra due segnali (funzioni), produce una nuova funzione
+- La convoluzione è sia discreta che continua
+- La convoluzione mono-dimensionale può essere generalizzata al caso a più dimensioni.
+
+---
+
+### Convoluzione discreta
+
+Dati due segnali discreti $g[n]$ e $x[n]$, l'operazione di covoluzione è calcolato come:
+
+$$ (x * g)[n] = \sum_{-\infty}^{+\infty}{x[m]g[n-m]} $$
+
+<br />
+
+---
+
+Nel caso discreto a due dimensioni (immagini), l'operazione di convoluzione si definisce come:
+
+$$ O(i,j) = \sum^{j}_{u=-k}{\sum_{v=-k}^{k}{F(u,v)I(u-v, j -v)}} $$
+
+- $I$ è l'immagine di input
+- $F$ è il filtro convoluzionale quadrato, di lato $2k$
+- $O$ è il pixel di output nella posizione $(i,j)$.
+
+---
+
+In computer vision  "tradizionale" i Kernel sono definiti **manualmente**, in modo tale da **estrarre determinate caratteristiche (features) di interesse** dall'immagine di input.
+
+Ad esempio:
+
+![edge](images/convolution_kernel.png)
 
 ---
 
@@ -76,6 +109,6 @@ La convoluzione è una operazione tra due segnal
 
 ---
 
-Convoltional Neural Networks for Image Classificatio and Object Detection
+Convolutional Neural Networks for Image Classificatio and Object Detection
 
 - Colab: 
