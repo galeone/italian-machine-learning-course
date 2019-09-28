@@ -176,6 +176,38 @@ Pensando ai dati in questo modo, è possibile calcolare relazioni geometriche co
 
 ---
 
+## Tensori
+
+I tensori sono lo strumento matematico che permette di trattare in maniera omogenea strutture dati con diverse dimensionalità.
+
+Senza scendere nei dettagli, abbiamo che:
+
+- Uno **scalare** è un tensore $f: \mathbb{R} \rightarrow \mathbb{R}, f(e_1) = c $
+- Un **vettore** è un tensore $f: \mathbb{R}^n \rightarrow \mathbb{R}, f(e_i) = v_i $
+- Una **matrice** è un tensore $f: \mathbb{R}^n \rightarrow \mathbb{R}^m, f(e_i, e_j) = A_{i,j} $
+
+---
+
+Nella **pratica** possiamo pensare ad un tensore come ad un **array n-dimensionale** o una lista.
+
+Come vedremo dopo, TensorFlow usa il tensore per rappresentare **ogni tipo di dato**.
+
+Ogni tensore ha tre caratteristiche principali:
+
+1. **Un rango** (rank): il numero di dimensioni del tensore
+2. **Una forma** (shape): la descrizione completa della forma del tensore, strettamente legata al rango.
+3. **Un tipo** (dtype): interi, float, ...
+
+---
+
+Ad esempio:
+
+- un tensore con rango 0 ha shape `()` (scalare)
+- un tensore con rango 1 ha shape `[D0]` (una lista di `D0` numeri)
+- un tensore con rango 2 ha shape `[D0, D1]) (una matrice `D0 x D1`) ...
+
+---
+
 ## Iris Dataset
 
 Per comprendere al meglio il concetto di dimensione, useremo il noto "Iris Dataset".
