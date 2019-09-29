@@ -76,7 +76,8 @@ Senza dilungarsi nella teoria, quel che è necessario sapere che:
 
 - L'operazione di convoluzione tra due segnali (funzioni), produce una nuova funzione
 - La convoluzione è sia discreta che continua
-- La convoluzione mono-dimensionale può essere generalizzata al caso a più dimensioni.
+- La convoluzione mono-dimensionale può essere generalizzata al caso a più dimensioni
+- L'operazione di convoluzione è commutativa
 
 ---
 
@@ -149,6 +150,14 @@ $$ O_w = O_h = \left\lfloor\frac{I_w - 2k + 2P}{S}\right\rfloor + 1 $$
 ![padding and stride](images/numerical_padding_strides.gif)
 
 Convoluzione tra un immagine $5 \times 5$, con uno **zero padding** $1 \times 1$ ed un kernel $3 \times 3$, usando stride $2 \times 2$
+
+---
+
+> Fin'ora abbiamo considerato **solo immagini a singolo canale** (scala di grigi), ma l'operazione di convoluzione può essere effettuata tra **volumi** di profondità arbitraria (immagini RGB, oppure volumi di qualsiasi profondità D).
+
+---
+
+### Convoluzioni tra volumi
 
 ---
 
