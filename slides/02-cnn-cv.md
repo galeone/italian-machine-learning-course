@@ -153,20 +153,6 @@ Convoluzione tra un immagine $5 \times 5$, con uno **zero padding** $1 \times 1$
 
 ---
 
-## Reti neurali convoluzionali: l'idea
-
-> Anziché definire manualmente il kernel (filtro) per estrarre specifiche features dall'immagine
->
-> rendiamo **il kernel** apprendibile e facciamo sì che il processo di apprendimento, modifichi i parametri
-> del filtro, in modo tale che l'operazione di convoluzione tra esso e l'input estragga features significative per
-> risolvere il task (specificato dalla loss function).
-
----
-
-![features](images/conv_net.png)
-
----
-
 > Fin'ora abbiamo considerato **solo immagini a singolo canale** (scala di grigi), ma l'operazione di convoluzione può essere effettuata tra **volumi** di profondità arbitraria (immagini RGB, oppure volumi di qualsiasi profondità D).
 
 ---
@@ -211,7 +197,17 @@ Quindi la formula per la convoluzione tra una immagine $I = \{I_1, \cdot, I_D\}$
 
 $$ O(i,j) = \sum^{D}_{d=1}{\sum^{j}_{u=-k}{\sum_{v=-k}^{k}{F_d(u,v)I(_du-v, j -v)}}} $$
 
-Il risultato è quindi una singola feature map la cui risoluzione è la stessa che si sarebbe ottenuta con una convoluzione su singolo canale.
+Il risultato è quindi una singola feature map (somma) la cui risoluzione è la stessa che si sarebbe ottenuta con una convoluzione su singolo canale.
+
+---
+
+## Reti neurali convoluzionali: l'idea
+
+> Anziché definire manualmente il kernel (filtro) per estrarre specifiche features dall'immagine
+>
+> rendiamo **il kernel** apprendibile e facciamo sì che il processo di apprendimento, modifichi i parametri
+> del filtro, in modo tale che l'operazione di convoluzione tra esso e l'input estragga features significative per
+> risolvere il task (specificato dalla loss function).
 
 ---
 
@@ -219,13 +215,85 @@ Il risultato è quindi una singola feature map la cui risoluzione è la stessa c
 
 > Apprendere filtri convoluzionali consiste nel **definire un numero arbitrario N di filtri da apprendere** ed eseguire N convoluzioni su volumi, in maniera indipendente.
 
+Ogni filtro convoluzionale è **un neurone** che osserva una regione locale dell'immagine (sulla quale scorre).
+
+![local receptive field](images/local_rf.png)
+
+---
+
+![features](images/conv_net.png)
+
+Ogni layer convoluzionale apprende la capacità di estrarre features via via più astratte all'aumentare della profondità della rete, combinando le features elementari estratte dai layer precedenti.
+
+---
+
+## Classificazione ed estrazione di features
+
+Essendo a tutti gli effetti una **rete neurale**, possiamo definire l'architettura in modo tale da estrarre **un numero arbirario di features** (a bassa dimensionalitù) ed utilizzarlo come **input di una classificatore** (rete FC).
+
+![fe](images/feature-extractor.png)
+
+---
+
+Definendo le architetture **a blocchi** (blocchi di feature extraction e classificazione indipendenti) possiamo pensare di **riutilizzare** feature extractor allenati da altri su dataset di grandi dimensioni.
+
+<br />
+
+Persumibilmente questi feature extractor hanno appreso la capacità di estrarre features "buone".
+
+---
+
+## Transfer Learning & Fine Tuning
+
+Il riutilizzo del feature extractor puù avvenire in due modi:
+
+- Transfer Learning: il feature extractor viene scaricato (modello pre-trainato) e viene usato **solo** per estrarre le features e diventare l'input della **testa** di classificazione
+- Fine Tuning: il feature ectractor viene **rifinito** durante il processo di train, quindi non sarà solo l'input della **testa**, ma diventerà parte dell'architettura da **allenare**.
+
+---
+
+## Localizzazione
+
+Individuare la bounding box che racchiude un oggetto all'interno di una immagine può essere fatto usando una rete neurale convoluzionale che rispetta la struttura appena definita.
+
+Infatti, avendo a dispozione un dataset di immagini contenenti un oggetto annotato e le coordinate della bounding box, possiamo definire una architettura in grado di **regredire** le coordinate.
+
+![loc as reg](images/loc-as-reg.png)
+
+---
+
+## Localizzazione e classificazione
+
+È un sottoinsieme del task (più complesso) di object detection.
+
+Supponiamo di avere in scena solo un oggetto ed una bounding box da regredire.
+
+<br />
+
+È possibile definire una rete neurale con **due teste**:
+
+1. Regression head: per la regressione delle coordinate (più essere class agnostic o class specific)
+2. Classification head: per la classificazione dell'oggetto
+
+---
+
+È possibile **allenare simultaneamente** la rete a risolvere entrambi i task: questo è un esempio di multi-task learning.
+
+![double head](images/double-head.png)
+
 ---
 
 
 ## Domande
 
 1. L'operazione di convoluzione che risultato produce?
-
+2. La convoluzione tra una immagine ed un kernel/filtro convoluzionale, come viene effettuata?
+3. Quali sono le fasi della convoluzione tra volumi?
+4. Apprendimento della capacità di estrarre features mediante convoluzioni: come?
+5. È possibile regredire coordinate usando un feature extractor di una rete (CNN) allenata in classifcazione?
+6. Differenza tra transfer learning e fine tuning
+7. Al variare della profondità della rete, le features estratte come sono?
+8. Per regredire le coordinate di una bounding box: quanti neuroni di output e che loss usare?
 
 ---
 
