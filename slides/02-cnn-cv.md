@@ -153,15 +153,79 @@ Convoluzione tra un immagine $5 \times 5$, con uno **zero padding** $1 \times 1$
 
 ---
 
+## Reti neurali convoluzionali: l'idea
+
+> Anziché definire manualmente il kernel (filtro) per estrarre specifiche features dall'immagine
+>
+> rendiamo **il kernel** apprendibile e facciamo sì che il processo di apprendimento, modifichi i parametri
+> del filtro, in modo tale che l'operazione di convoluzione tra esso e l'input estragga features significative per
+> risolvere il task (specificato dalla loss function).
+
+---
+
+![features](images/conv_net.png)
+
+---
+
 > Fin'ora abbiamo considerato **solo immagini a singolo canale** (scala di grigi), ma l'operazione di convoluzione può essere effettuata tra **volumi** di profondità arbitraria (immagini RGB, oppure volumi di qualsiasi profondità D).
 
 ---
 
 ### Convoluzioni tra volumi
 
+![kernels](images/conv_kernels.png)
+
+Un'immagine può essere vista come un volume di immagini in scala di grigi, messe una dietro l'altra.
+
+<br />
+
+Allo stesso modo, i kernel convoluzionali possono essere volumi di filtri della stessa profondità dell'immagine di input.
+
+**Input C canali** $ \rightarrow $ **Singolo kernel a C canali**
+
 ---
 
+Data un immagine RGB, la convluzione con un kernel $3 \times 3$:
+
+1. La convoluzione di ogni canale per il rispettivo filtro a profindità 1
+
+![conv](images/conv_1.gif)
+
+---
+
+2. La somma delle **feature map** estratte
+
+![conv sum](images/conv_sum.gif)
+
+---
+
+3. Se è presente un termine di bias, viene aggiunto alla feature map risultante.
+
+![conv bias](images/conv_bias.gif)
+
+---
+
+Quindi la formula per la convoluzione tra una immagine $I = \{I_1, \cdot, I_D\}$ ed un filtro $F = \{F_1, \cdot, F_D\}$ è:
+
+<br />
+
+$$ O(i,j) = \sum^{D}_{d=1}{\sum^{j}_{u=-k}{\sum_{v=-k}^{k}{F_d(u,v)I(_du-v, j -v)}}} $$
+
+Il risultato è quindi una singola feature map la cui risoluzione è la stessa che si sarebbe ottenuta con una convoluzione su singolo canale.
+
+---
+
+## Apprendere filtri convoluzionali
+
+> Apprendere filtri convoluzionali consiste nel **definire un numero arbitrario N di filtri da apprendere** ed eseguire N convoluzioni su volumi, in maniera indipendente.
+
+---
+
+
 ## Domande
+
+1. L'operazione di convoluzione che risultato produce?
+
 
 ---
 
