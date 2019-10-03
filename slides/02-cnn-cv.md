@@ -283,6 +283,57 @@ Supponiamo di avere in scena solo un oggetto ed una bounding box da regredire.
 
 ---
 
+### Metriche
+
+Il task di classificazione e localizzazione richiede la misura di due metriche in simultanea:
+
+<br />
+
+- La precisione di classificazione, cioè tutte le metriche valide per un classificatore (come l'accuracy)
+- La precisione per la detection
+
+Misurare la precisione per la detection, in realtà richiede di trattare il problema come un problema di **classificazione binaria**.
+
+---
+
+### Intersection Over Union
+
+Per decidere se una bounding box predetta è a tutti gli effetti una "detection" è possibile utilizzare l'intersection over union.
+
+$$ IoU = \frac{A \cap B}{A \cup B} $$
+
+<br />
+
+Il suo valore è tra 0 (nessuna detection) ed 1 (overlap completo).
+
+---
+
+![iou](images/iou.png)
+
+---
+
+Per *decidere* se una bounding box predetta è da considerare una **detection**, si fissa una soglia di IoU e vengono considerate come detection solo quelle predizioni di bounding box che superano la soglia.
+
+<br />
+
+Così facendo ci ritroviamo nel caso di una classificazione binaria, in cui, però, possiamo solo avere:
+
+- True positives: detection
+- False positives: detection errate (non passano la soglia)
+
+È impossibile avere False negatives o true negatives, dato che non esistono i negativi.
+
+---
+
+## Precision
+
+Per il motivo precedentemente introdotto, l'unica metrica misurabile è la **precision**
+
+<br />
+
+$$ P = \frac{TP}{TP + FP} $$
+
+---
 
 ## Domande
 
@@ -294,6 +345,8 @@ Supponiamo di avere in scena solo un oggetto ed una bounding box da regredire.
 6. Differenza tra transfer learning e fine tuning
 7. Al variare della profondità della rete, le features estratte come sono?
 8. Per regredire le coordinate di una bounding box: quanti neuroni di output e che loss usare?
+9. Spiegare l'Intersection Over Union
+10. Spiegare i true positives, true negatives, false positives e false negatives quando facciamo object localization e detection.
 
 ---
 
