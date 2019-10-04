@@ -67,9 +67,9 @@ Per poter capire perché è bene apprendere questi filtri, è prima necessario c
 ## L'operazione di convoluzione
 
 
-In **teoria dei segnali** l'operazione di convoluione è usata per studiare la rispotsa di un iustema fisico quando un determinato segnale è applicato al suo input.
+In **teoria dei segnali** l'operazione di convoluione è usata per studiare la rispotsa di un sistema fisico quando un determinato segnale è applicato al suo input.
 
-Senza dilungarsi nella teoria, quel che è necessario sapere che:
+Senza dilungarsi nella teoria, quel che è necessario sapere è che:
 
 <br />
 
@@ -191,13 +191,15 @@ Data un immagine RGB, la convluzione con un kernel $3 \times 3$:
 
 ---
 
-Quindi la formula per la convoluzione tra una immagine $I = \{I_1, \cdot, I_D\}$ ed un filtro $F = \{F_1, \cdot, F_D\}$ è:
+Quindi la formula per la convoluzione tra una immagine $I = \{I_1, \cdots, I_D\}$ ed un filtro $F = \{F_1, \cdots, F_D\}$ è:
 
 <br />
 
 $$ O(i,j) = \sum^{D}_{d=1}{\sum^{j}_{u=-k}{\sum_{v=-k}^{k}{F_d(u,v)I(_du-v, j -v)}}} $$
 
-Il risultato è quindi una singola feature map (somma) la cui risoluzione è la stessa che si sarebbe ottenuta con una convoluzione su singolo canale.
+<br />
+
+Il risultato è quindi una singola feature map (somma delle singole) la cui risoluzione è la stessa che si sarebbe ottenuta con una convoluzione su singolo canale.
 
 ---
 
@@ -205,7 +207,7 @@ Il risultato è quindi una singola feature map (somma) la cui risoluzione è la 
 
 > Anziché definire manualmente il kernel (filtro) per estrarre specifiche features dall'immagine
 >
-> rendiamo **il kernel** apprendibile e facciamo sì che il processo di apprendimento, modifichi i parametri
+> rendiamo **il kernel apprendibile** e facciamo sì che il processo di apprendimento, modifichi i parametri
 > del filtro, in modo tale che l'operazione di convoluzione tra esso e l'input estragga features significative per
 > risolvere il task (specificato dalla loss function).
 
@@ -213,9 +215,11 @@ Il risultato è quindi una singola feature map (somma) la cui risoluzione è la 
 
 ## Apprendere filtri convoluzionali
 
-> Apprendere filtri convoluzionali consiste nel **definire un numero arbitrario N di filtri da apprendere** ed eseguire N convoluzioni su volumi, in maniera indipendente.
+> Apprendere filtri convoluzionali consiste nel **definire un numero arbitrario N di filtri da apprendere** ed eseguire N convoluzioni tra volumi, in maniera indipendente.
 
 Ogni filtro convoluzionale è **un neurone** che osserva una regione locale dell'immagine (sulla quale scorre).
+
+Ogni convoluzione produce una feature map, chiamata **activation map**.
 
 ![local receptive field](images/local_rf.png)
 
@@ -229,7 +233,7 @@ Ogni layer convoluzionale apprende la capacità di estrarre features via via pi�
 
 ## Classificazione ed estrazione di features
 
-Essendo a tutti gli effetti una **rete neurale**, possiamo definire l'architettura in modo tale da estrarre **un numero arbirario di features** (a bassa dimensionalitù) ed utilizzarlo come **input di una classificatore** (rete FC).
+Essendo a tutti gli effetti una **rete neurale**, possiamo definire l'architettura in modo tale da estrarre **un numero arbirario di features** (a bassa dimensionalità) ed utilizzarlo come **input di una classificatore** (rete FC).
 
 ![fe](images/feature-extractor.png)
 
@@ -247,8 +251,10 @@ Persumibilmente questi feature extractor hanno appreso la capacità di estrarre 
 
 Il riutilizzo del feature extractor puù avvenire in due modi:
 
-- Transfer Learning: il feature extractor viene scaricato (modello pre-trainato) e viene usato **solo** per estrarre le features e diventare l'input della **testa** di classificazione
-- Fine Tuning: il feature ectractor viene **rifinito** durante il processo di train, quindi non sarà solo l'input della **testa**, ma diventerà parte dell'architettura da **allenare**.
+<br />
+
+- **Transfer Learning**: il feature extractor viene scaricato (modello pre-trainato) e viene usato **solo** per estrarre le features e diventare l'input della **testa** di classificazione
+- **Fine Tuning**: il feature ectractor viene **rifinito** durante il processo di train, quindi non sarà solo l'input della **testa**, ma diventerà parte dell'architettura da **allenare**.
 
 ---
 
@@ -266,14 +272,16 @@ Infatti, avendo a dispozione un dataset di immagini contenenti un oggetto annota
 
 È un sottoinsieme del task (più complesso) di object detection.
 
-Supponiamo di avere in scena solo un oggetto ed una bounding box da regredire.
+Supponiamo di avere in scena **solo un oggetto** ed una bounding box da regredire.
 
 <br />
 
 È possibile definire una rete neurale con **due teste**:
 
-1. Regression head: per la regressione delle coordinate (più essere class agnostic o class specific)
-2. Classification head: per la classificazione dell'oggetto
+<br />
+
+1. **Regression head**: per la regressione delle coordinate (più essere class agnostic o class specific)
+2. **Classification head**: per la classificazione dell'oggetto
 
 ---
 
@@ -283,7 +291,7 @@ Supponiamo di avere in scena solo un oggetto ed una bounding box da regredire.
 
 ---
 
-### Metriche
+## Metriche
 
 Il task di classificazione e localizzazione richiede la misura di due metriche in simultanea:
 
@@ -292,13 +300,17 @@ Il task di classificazione e localizzazione richiede la misura di due metriche i
 - La precisione di classificazione, cioè tutte le metriche valide per un classificatore (come l'accuracy)
 - La precisione per la detection
 
+<br />
+
 Misurare la precisione per la detection, in realtà richiede di trattare il problema come un problema di **classificazione binaria**.
 
 ---
 
-### Intersection Over Union
+## Intersection Over Union
 
-Per decidere se una bounding box predetta è a tutti gli effetti una "detection" è possibile utilizzare l'intersection over union.
+Per decidere se una bounding box predetta è a tutti gli effetti una "detection" è possibile utilizzare l'intersection over union (delle aree):
+
+<br />
 
 $$ IoU = \frac{A \cap B}{A \cup B} $$
 
@@ -318,8 +330,12 @@ Per *decidere* se una bounding box predetta è da considerare una **detection**,
 
 Così facendo ci ritroviamo nel caso di una classificazione binaria, in cui, però, possiamo solo avere:
 
+<br />
+
 - True positives: detection
 - False positives: detection errate (non passano la soglia)
+
+<br />
 
 È impossibile avere False negatives o true negatives, dato che non esistono i negativi.
 
