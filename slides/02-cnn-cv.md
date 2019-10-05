@@ -43,10 +43,19 @@ Le reti neurali convoluzionali (CNN) sono i blocchi fondamentali di ogni applica
 
 (anche singolarmente)
 
+Localizzazione e classificazione di **un solo oggetto**.
+
+---
+
+### Object Detection
+
+![yolo](images/yolo_od.jpg)
+
+Localizzazione e classificazione di più oggetti, parallelamente.
+
 ---
 
 ### Semantic Segmentation
-
 
 ![sem seg](images/semseg.png)
 
@@ -366,6 +375,10 @@ $$ P = \frac{TP}{TP + FP} $$
 
 ---
 
-Introduzione all'object detection + TensorFlow Hub
+Introduzione alle reti neurali convoluzionali:
 
-- Colab: https://bit.ly/2lUTeAM
+-  Colab: https://bit.ly/2lUTeAM
+
+Introduzione all'object detection + TensorFlow Hub:
+
+- Colab: https://bit.ly/2MeO8IK
