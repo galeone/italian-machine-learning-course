@@ -283,7 +283,7 @@ Quest'ultimo grafico, mostra che **esistono tre partizioni naturali (cluster)** 
 
 <br />
 
-È possibile classificare gli algoritmi di machine learning (supervisionato e non) in base alla presenza di **parametri apprendibili** o meno, all'interno del modello.
+È possibile classificare gli algoritmi di machine learning (supervisionato e non) in base alla presenza di un numero fisso (parametrici) o meno (non parametrici) di **parametri apprendibili** all'interno del modello.
 
 - **Algoritmi non parametrici**: sono una maniera classica di affrontare il problema di classificazione/regressione. Il più comune algoritmo di non parametrico è il **k-NN** (k-Nearest-Neighbours).
 - **Algoritmi parametrici**: hanno bisogno di un processo di **train** durante il quale **modificano il valore dei loro parametri** per adattarsi al dataset e risolvere il task.
