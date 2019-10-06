@@ -33,11 +33,15 @@ Le reti neurali convoluzionali (CNN) sono i blocchi fondamentali di ogni applica
 
 ![cat](images/cat.png)
 
+<small>Fonte immagine: Stanford cs231n.</small>
+
 ---
 
 ### Object Detection and Classification
 
 ![cat](images/detect-cat.png)
+
+<small>Fonte immagine: Stanford cs231n.</small>
 
 <br />
 
@@ -51,6 +55,8 @@ Localizzazione e classificazione di **un solo oggetto**.
 
 ![yolo](images/yolo_od.jpg)
 
+<small>Fonte immagine: video di YOLO9000 https://pjreddie.com/darknet/yolo</small>
+
 Localizzazione e classificazione di più oggetti, parallelamente.
 
 ---
@@ -59,11 +65,15 @@ Localizzazione e classificazione di più oggetti, parallelamente.
 
 ![sem seg](images/semseg.png)
 
+<small>Fonte immagine: Stanford cs231n.</small>
+
 ---
 
 ### Generative Models
 
 ![pix2pix](images/pix2pix.png)
+
+<small>Fonte immagine: Image-to-Image Translation with Conditional Adversarial Networks (pix2pix paper)</small>
 
 ---
 
@@ -116,6 +126,8 @@ $$ O(i,j) = \sum^{j}_{u=-k}{\sum_{v=-k}^{k}{F(u,v)I(u-v, j -v)}} $$
 
 ![conv no stride](images/numerical_no_padding_no_strides.gif)
 
+<small>Fonte immagine: <a href="http://deeplearning.net/software/theano/tutorial/conv_arithmetic.html">Convolution arithmetic tutorial</a></small>
+
 ---
 
 In computer vision  "tradizionale" i Kernel sono definiti **manualmente**, in modo tale da **estrarre determinate caratteristiche (features) di interesse** dall'immagine di input.
@@ -157,6 +169,8 @@ $$ O_w = O_h = \left\lfloor\frac{I_w - 2k + 2P}{S}\right\rfloor + 1 $$
 ---
 
 ![padding and stride](images/numerical_padding_strides.gif)
+
+<small>Fonte immagine: <a href="http://deeplearning.net/software/theano/tutorial/conv_arithmetic.html">Convolution arithmetic tutorial</a></small>
 
 Convoluzione tra un immagine $5 \times 5$, con uno **zero padding** $1 \times 1$ ed un kernel $3 \times 3$, usando stride $2 \times 2$
 
@@ -232,6 +246,8 @@ Ogni convoluzione produce una feature map, chiamata **activation map**.
 
 ![local receptive field](images/local_rf.png)
 
+<small>Fonte immagine: <a href="http://deeplearning.net/software/theano/tutorial/conv_arithmetic.html">Convolution arithmetic tutorial</a></small>
+
 ---
 
 ![features](images/conv_net.png)
@@ -245,6 +261,9 @@ Ogni layer convoluzionale apprende la capacità di estrarre features via via pi�
 Essendo a tutti gli effetti una **rete neurale**, possiamo definire l'architettura in modo tale da estrarre **un numero arbirario di features** (a bassa dimensionalità) ed utilizzarlo come **input di una classificatore** (rete FC).
 
 ![fe](images/feature-extractor.png)
+
+<small>Fonte immagine: Stanford cs231n.</small>
+
 
 ---
 
@@ -275,6 +294,8 @@ Infatti, avendo a dispozione un dataset di immagini contenenti un oggetto annota
 
 ![loc as reg](images/loc-as-reg.png)
 
+<small>Fonte immagine: Stanford cs231n.</small>
+
 ---
 
 ## Localizzazione e classificazione
@@ -297,6 +318,8 @@ Supponiamo di avere in scena **solo un oggetto** ed una bounding box da regredir
 È possibile **allenare simultaneamente** la rete a risolvere entrambi i task: questo è un esempio di multi-task learning.
 
 ![double head](images/double-head.png)
+
+<small>Fonte immagine: Stanford cs231n.</small>
 
 ---
 
@@ -330,6 +353,8 @@ Il suo valore è tra 0 (nessuna detection) ed 1 (overlap completo).
 ---
 
 ![iou](images/iou.png)
+
+<small>Fonte immagine: <a href="https://medium.com/@jonathan_hui/map-mean-average-precision-for-object-detection-45c121a31173">Jonathan Hui</a></small>
 
 ---
 
