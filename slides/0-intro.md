@@ -19,9 +19,11 @@ Docente: Paolo Galeone
 Computer engineer | Head of ML & CV @ ZURU Tech Italy | Machine Learning GDE
 
 - Blog: https://pgaleone.eu/
-- Github: [https://github.com/galeone/](galeone)
+- Github: [galeone](https://github.com/galeone/)
 - Twitter: [@paolo_galeone](https://twitter.com/paolo_galeone)
 - Author: [Hands-On Neural Networks with TensorFlow 2.0](https://amzn.to/2ZULPzh)
+
+Il libro [Hands-On Neural Networks with TensorFlow 2.0](https://amzn.to/2ZULPzh) contiene una trattazione molto più completa di quanto mostrato in questo corso: **lettura raccomandata**.
 
 ---
 
@@ -57,10 +59,3 @@ Computer engineer | Head of ML & CV @ ZURU Tech Italy | Machine Learning GDE
 - Migliorare il classificatore di immagini usando le CNN
 - Introduzione all'object detection
 - Implementazione di un classificatore e localizzatore di oggetti
-
----
-
-## Agenda
-
-- 28/09 prima parte  + seconda parte
-- 05/10 terza parte
