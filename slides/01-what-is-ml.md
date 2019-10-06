@@ -367,6 +367,8 @@ Usare modelli con molti parametri può sembrare la soluzione perfetta, ma nella 
 
 ![over-under](images/over_under.png)
 
+<small>Fonte immagine <a href="https://medium.com/greyatom/what-is-underfitting-and-overfitting-in-machine-learning-and-how-to-deal-with-it-6803a989c76">What is underfitting and overfitting in machine learning and how to deal with it</a></small>
+
 ---
 
 <!-- sectionTitle: Misurare le performance: le metriche-->
@@ -516,6 +518,8 @@ Dopo questa introduzione ai *concetti fondamentali* del Machine Learning, possia
 
 ![neuronz](images/biological-artificial.png)
 
+<small>Fonte immagine: Stanford cs231n.</small>
+
 ---
 
 - **Dendriti**: numero di input che il neurone accetta; dimensione del dato di input.
@@ -548,6 +552,8 @@ La **non linearità**, invece, **trasforma** l'iperpiano in una generica **ipers
 ---
 
 ![non-linear](images/activation_fns.png)
+
+<small>Fonte immagine: Stanford cs231n.</small>
 
 ---
 
