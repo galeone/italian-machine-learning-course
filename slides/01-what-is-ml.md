@@ -381,7 +381,7 @@ Misurare le performance di un algoritmo di apprendimento supervisionato durante 
 <br />
 
 - È possibile misurare le performance del modello su ogni split del dataset
-- Al termine di ogni epoca è raccomadabile misurare le performance sul dataset di train e validation
+- Al termine di ogni epoca è raccomandabile misurare le performance sul dataset di train e validation
 - Le metriche misurate sui diversi dataset vanno rappresentate sullo **stesso grafico**
 - Le differenze tra le performance di train e validation ci indicano se il modello soffre di condizioni patologiche.
 
