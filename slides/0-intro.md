@@ -49,7 +49,7 @@ Il libro [Hands-On Neural Networks with TensorFlow 2.0](https://amzn.to/2ZULPzh)
 - Usare i Keras model (Sequential e Functional API) per definire modelli deep
 - TensorFlow Datasets e tf.data API
 - Il TensorFlow custom training loop a la GradientTape
-- Classificare immagini con reti completamente conesse
+- Classificare immagini con reti completamente connesse
 
 ---
 

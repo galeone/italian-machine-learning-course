@@ -32,7 +32,7 @@ Le applicazioni del Machine Learning sono infinite. Siamo circondati da applicaz
 
 ---
 
-### Plate Recongnition
+### Plate Recognition
 
 ![plate](images/plate-recognition.jpg)
 
@@ -62,7 +62,7 @@ Per un computer un'immagine non è altro che un insieme ordinato di vettori 3D (
 
 L'algoritmo (**modello**) usato dall'applicazione è stato **allenato** per identificare un **pattern** (il volto).
 
-Il modello ha **appreso**, dopo aver visto migliaia di volte migliaglia di **esempi etichettati**, che ad un certo input corrisponde quello che noi chiamiamo volto.
+Il modello ha **appreso**, dopo aver visto migliaia di volte migliaia di **esempi etichettati**, che ad un certo input corrisponde quello che noi chiamiamo volto.
 
 <br />
 
@@ -82,7 +82,7 @@ In questo corso tratteremo *esclusivamente* gli algoritmi di apprendimento **sup
 
 ---
 
-Ogni categoria di algoritmi ha le sue peculiarità, ma tutti condividono lo steso obiettivo: **apprendere dai dati**.
+Ogni categoria di algoritmi ha le sue peculiarità, ma tutti condividono lo stesso obiettivo: **apprendere dai dati**.
 
 <br />
 
