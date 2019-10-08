@@ -212,7 +212,7 @@ Ad esempio:
 
 Per comprendere al meglio il concetto di dimensione, useremo il noto "Iris Dataset".
 
-Il dataset contiene 3 classi, e 50 esempi per classe. La classe è il tipo di fiore. Gli attribtui sono tutti continui, ad eccezione per la classe/label.
+Il dataset contiene 3 classi, e 50 esempi per classe. La classe è il tipo di fiore. Gli attributi sono tutti continui, ad eccezione per la classe/label.
 
 ---
 
