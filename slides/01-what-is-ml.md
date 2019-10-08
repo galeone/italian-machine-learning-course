@@ -619,7 +619,7 @@ $$ O = f(Wx + b) $$
 - Il dataset è composto da dati, che possono essere visti come punti in uno spazio D-dimensionale.
 - Un percettrone è in grado di separare correttamente solo dati che sono linearmente separabili.
 - Aggiungere la non linearità rende il percettrone in grado di separare dati non linearmente separabili, ma **deforma il confine decisionale**.
-- Mettere in cascata (**rete deep**) più layer di neuorni, permette di **ridurre la dimensionalità**, e apprendere migliori confini decisionali.
+- Mettere in cascata (**rete deep**) più layer di neuroni, permette di **ridurre la dimensionalità**, e apprendere migliori confini decisionali.
 - È possibile variare la **topologia** delle reti (come vedremo).
 
 ---
