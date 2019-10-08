@@ -44,7 +44,7 @@ Le applicazioni del Machine Learning sono infinite. Siamo circondati da applicaz
 
 ---
 
-Quando usiamo il nostro spartphone per inquadrare una persona, in real time vediamo la face detection in azione.
+Quando usiamo il nostro smartphone per inquadrare una persona, in real time vediamo la face detection in azione.
 
 <br />
 
@@ -135,9 +135,9 @@ Esempio cani e gatti - classificazione.
 
 ---
 
-- **Training set**: il subset da usare per allenare il modello
-- **Validation set**: il subset da usare per misurare per performance del modello **durante** il training
-- **Test set**: il subset da **non toccare mai** durante le fasi di training e validation, ma da usare **solo per la valutazione delle performance finale**.
+- **Training set**: il sottoinsieme da usare per allenare il modello
+- **Validation set**: il sottoinsieme da usare per misurare per performance del modello **durante** il training
+- **Test set**: il sottoinsieme da **non toccare mai** durante le fasi di training e validation, ma da usare **solo per la valutazione delle performance finale**.
 
 ---
 
