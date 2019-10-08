@@ -136,7 +136,7 @@ Esempio cani e gatti - classificazione.
 ---
 
 - **Training set**: il sottoinsieme da usare per allenare il modello
-- **Validation set**: il sottoinsieme da usare per misurare per performance del modello **durante** il training
+- **Validation set**: il sottoinsieme da usare per misurare le performance del modello **durante** il training
 - **Test set**: il sottoinsieme da **non toccare mai** durante le fasi di training e validation, ma da usare **solo per la valutazione delle performance finale**.
 
 ---
