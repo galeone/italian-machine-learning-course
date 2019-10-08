@@ -86,7 +86,7 @@ Per poter capire perché è bene apprendere questi filtri, è prima necessario c
 ## L'operazione di convoluzione
 
 
-In **teoria dei segnali** l'operazione di convoluione è usata per studiare la rispotsa di un sistema fisico quando un determinato segnale è applicato al suo input.
+In **teoria dei segnali** l'operazione di convoluzione è usata per studiare la rispotsa di un sistema fisico quando un determinato segnale è applicato al suo input.
 
 Senza dilungarsi nella teoria, quel che è necessario sapere è che:
 
@@ -176,7 +176,7 @@ Convoluzione tra un immagine $5 \times 5$, con uno **zero padding** $1 \times 1$
 
 ---
 
-> Fin'ora abbiamo considerato **solo immagini a singolo canale** (scala di grigi), ma l'operazione di convoluzione può essere effettuata tra **volumi** di profondità arbitraria (immagini RGB, oppure volumi di qualsiasi profondità D).
+> Finora abbiamo considerato **solo immagini a singolo canale** (scala di grigi), ma l'operazione di convoluzione può essere effettuata tra **volumi** di profondità arbitraria (immagini RGB, oppure volumi di qualsiasi profondità D).
 
 ---
 
@@ -258,7 +258,7 @@ Ogni layer convoluzionale apprende la capacità di estrarre features via via pi�
 
 ## Classificazione ed estrazione di features
 
-Essendo a tutti gli effetti una **rete neurale**, possiamo definire l'architettura in modo tale da estrarre **un numero arbirario di features** (a bassa dimensionalità) ed utilizzarlo come **input di una classificatore** (rete FC).
+Essendo a tutti gli effetti una **rete neurale**, possiamo definire l'architettura in modo tale da estrarre **un numero arbitrario di features** (a bassa dimensionalità) ed utilizzarlo come **input di una classificatore** (rete FC).
 
 ![fe](images/feature-extractor.png)
 
@@ -271,7 +271,7 @@ Definendo le architetture **a blocchi** (blocchi di feature extraction e classif
 
 <br />
 
-Persumibilmente questi feature extractor hanno appreso la capacità di estrarre features "buone".
+Presumibilmente questi feature extractor hanno appreso la capacità di estrarre features "buone".
 
 ---
 
@@ -282,7 +282,7 @@ Il riutilizzo del feature extractor puù avvenire in due modi:
 <br />
 
 - **Transfer Learning**: il feature extractor viene scaricato (modello pre-trainato) e viene usato **solo** per estrarre le features e diventare l'input della **testa** di classificazione
-- **Fine Tuning**: il feature ectractor viene **rifinito** durante il processo di train, quindi non sarà solo l'input della **testa**, ma diventerà parte dell'architettura da **allenare**.
+- **Fine Tuning**: il feature extractor viene **rifinito** durante il processo di train, quindi non sarà solo l'input della **testa**, ma diventerà parte dell'architettura da **allenare**.
 
 ---
 
@@ -290,7 +290,7 @@ Il riutilizzo del feature extractor puù avvenire in due modi:
 
 Individuare la bounding box che racchiude un oggetto all'interno di una immagine può essere fatto usando una rete neurale convoluzionale che rispetta la struttura appena definita.
 
-Infatti, avendo a dispozione un dataset di immagini contenenti un oggetto annotato e le coordinate della bounding box, possiamo definire una architettura in grado di **regredire** le coordinate.
+Infatti, avendo a disposizione un dataset di immagini contenenti un oggetto annotato e le coordinate della bounding box, possiamo definire una architettura in grado di **regredire** le coordinate.
 
 ![loc as reg](images/loc-as-reg.png)
 
