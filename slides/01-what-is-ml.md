@@ -44,7 +44,7 @@ Le applicazioni del Machine Learning sono infinite. Siamo circondati da applicaz
 
 ---
 
-Quando usiamo il nostro spartphone per inquadrare una persona, in real time vediamo la face detection in azione.
+Quando usiamo il nostro smartphone per inquadrare una persona, in real time vediamo la face detection in azione.
 
 <br />
 
@@ -135,9 +135,9 @@ Esempio cani e gatti - classificazione.
 
 ---
 
-- **Training set**: il subset da usare per allenare il modello
-- **Validation set**: il subset da usare per misurare per performance del modello **durante** il training
-- **Test set**: il subset da **non toccare mai** durante le fasi di training e validation, ma da usare **solo per la valutazione delle performance finale**.
+- **Training set**: il sottoinsieme da usare per allenare il modello
+- **Validation set**: il sottoinsieme da usare per misurare per performance del modello **durante** il training
+- **Test set**: il sottoinsieme da **non toccare mai** durante le fasi di training e validation, ma da usare **solo per la valutazione delle performance finale**.
 
 ---
 
@@ -212,7 +212,7 @@ Ad esempio:
 
 Per comprendere al meglio il concetto di dimensione, useremo il noto "Iris Dataset".
 
-Il dataset contiene 3 classi, e 50 esempi per classe. La classe è il tipo di fiore. Gli attribtui sono tutti continui, ad eccezione per la classe/label.
+Il dataset contiene 3 classi, e 50 esempi per classe. La classe è il tipo di fiore. Gli attributi sono tutti continui, ad eccezione per la classe/label.
 
 ---
 
@@ -381,7 +381,7 @@ Misurare le performance di un algoritmo di apprendimento supervisionato durante 
 <br />
 
 - È possibile misurare le performance del modello su ogni split del dataset
-- Al termine di ogni epoca è raccomadabile misurare le performance sul dataset di train e validation
+- Al termine di ogni epoca è raccomandabile misurare le performance sul dataset di train e validation
 - Le metriche misurate sui diversi dataset vanno rappresentate sullo **stesso grafico**
 - Le differenze tra le performance di train e validation ci indicano se il modello soffre di condizioni patologiche.
 
@@ -533,7 +533,7 @@ Dopo questa introduzione ai *concetti fondamentali* del Machine Learning, possia
 
 <br />
 
-Una funzione che lega l'input con i pesi associati alle sinapsi. Per simulare il comportamento del neuorne biologico (attivarsi con determinati stimoli di input), il nucleo è modellato usando una **funzione non lineare** $f$.
+Una funzione che lega l'input con i pesi associati alle sinapsi. Per simulare il comportamento del neurone biologico (attivarsi con determinati stimoli di input), il nucleo è modellato usando una **funzione non lineare** $f$.
 
 <br />
 
@@ -619,7 +619,7 @@ $$ O = f(Wx + b) $$
 - Il dataset è composto da dati, che possono essere visti come punti in uno spazio D-dimensionale.
 - Un percettrone è in grado di separare correttamente solo dati che sono linearmente separabili.
 - Aggiungere la non linearità rende il percettrone in grado di separare dati non linearmente separabili, ma **deforma il confine decisionale**.
-- Mettere in cascata (**rete deep**) più layer di neuorni, permette di **ridurre la dimensionalità**, e apprendere migliori confini decisionali.
+- Mettere in cascata (**rete deep**) più layer di neuroni, permette di **ridurre la dimensionalità**, e apprendere migliori confini decisionali.
 - È possibile variare la **topologia** delle reti (come vedremo).
 
 ---
