@@ -533,7 +533,7 @@ Dopo questa introduzione ai *concetti fondamentali* del Machine Learning, possia
 
 <br />
 
-Una funzione che lega l'input con i pesi associati alle sinapsi. Per simulare il comportamento del neuorne biologico (attivarsi con determinati stimoli di input), il nucleo è modellato usando una **funzione non lineare** $f$.
+Una funzione che lega l'input con i pesi associati alle sinapsi. Per simulare il comportamento del neurone biologico (attivarsi con determinati stimoli di input), il nucleo è modellato usando una **funzione non lineare** $f$.
 
 <br />
 
