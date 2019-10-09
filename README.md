@@ -71,3 +71,7 @@ The practical part is covered using Google Colab notebooks:
 - Introduction to Object Detection and Tranfer Learning with TensorFlow Hub: https://bit.ly/2MeO8IK
 
 The same notebook have been uploaded to this repo so we can discuss about changes here (feel free to open issues and submit pull requests).
+
+---
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Quest'opera è distribuita con Licenza <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribuzione 4.0 Internazionale</a>.
