@@ -4,10 +4,10 @@
 
 Materiale per un crash-course teorico/pratico al machine learning con TensorFlow 2.0.
 
-Argoumenti trattati:
+Argumenti trattati:
 
 - Introduzione al machine learnining: cos'è il machine learning, il dataset, le famiglie di algoritmi esistenti
-- Il processo di apprendimento: loss function, gradient descent ed algoritmidi ottimizzazione
+- Il processo di apprendimento: loss function, gradient descent ed algoritmi di ottimizzazione
 - Introduzione a TensorFlow 2.0: eager execution, l'ecosistema, introduzione a TensorFlow Datasets
 - Definire pipeline di input ottimizzate con la `tf.data` API
 - Classificazione di immagini con reti completamente connesse
@@ -19,7 +19,7 @@ Argoumenti trattati:
 
 ## Parte teorica
 
-La teoria è trattata usando delle slide. Le slide sono nella cartella `slides`. Il tool usato per scriverle è crearle (nel branch `gh-pages`) è fusuma: https://github.com/hiroppy/fusuma
+La teoria è trattata usando delle slide. Le slide sono nella cartella `slides`. Il tool usato per scriverle e crearle (nel branch `gh-pages`) è fusuma: https://github.com/hiroppy/fusuma
 
 Le slide sono disponibili online:
 
