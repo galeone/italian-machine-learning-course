@@ -164,7 +164,7 @@ $$ e_i = (x_0, x_1, \cdots, x_{n-1}) $$
 Un'utile intuizione è quella di pensare ad ogni singolo esempio del dataset come se fosse **una riga in un dataset**, dove gli **attributi sono le colonne**.
 <br />
 
-**ESEMPIO**: un immagine 28 x 28 in scala di grigi ha esattamente 28 x 28 = 284 distinti attributi (colonne).
+**ESEMPIO**: un immagine 28 x 28 in scala di grigi ha esattamente 28 x 28 = 784 distinti attributi (colonne).
 
 ---
 
@@ -234,7 +234,7 @@ Avendo ogni esempio 4 attributi (più l'informazione della classe) è già diffi
 
 <br />
 
-Come visualizziamo 4 dimensioni sullo stesso grafico? E invece 284?
+Come visualizziamo 4 dimensioni sullo stesso grafico? E invece 784?
 
 <br />
 
