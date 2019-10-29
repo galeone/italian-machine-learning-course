@@ -86,7 +86,7 @@ Per poter capire perché è bene apprendere questi filtri, è prima necessario c
 ## L'operazione di convoluzione
 
 
-In **teoria dei segnali** l'operazione di convoluzione è usata per studiare la rispotsa di un sistema fisico quando un determinato segnale è applicato al suo input.
+In **teoria dei segnali** l'operazione di convoluzione è usata per studiare la risposta di un sistema fisico quando un determinato segnale è applicato al suo input.
 
 Senza dilungarsi nella teoria, quel che è necessario sapere è che:
 
@@ -102,7 +102,7 @@ Senza dilungarsi nella teoria, quel che è necessario sapere è che:
 
 ### Convoluzione discreta
 
-Dati due segnali discreti $g[n]$ e $x[n]$, l'operazione di covoluzione è calcolato come:
+Dati due segnali discreti $g[n]$ e $x[n]$, l'operazione di convoluzione è calcolato come:
 
 <br />
 
@@ -194,7 +194,7 @@ Allo stesso modo, i kernel convoluzionali possono essere volumi di filtri della 
 
 ---
 
-Data un immagine RGB, la convluzione con un kernel $3 \times 3$:
+Data un immagine RGB, la convoluzione con un kernel $3 \times 3$:
 
 1. La convoluzione di ogni canale per il rispettivo filtro a profindità 1
 
@@ -281,7 +281,7 @@ Il riutilizzo del feature extractor puù avvenire in due modi:
 
 <br />
 
-- **Transfer Learning**: il feature extractor viene scaricato (modello pre-trainato) e viene usato **solo** per estrarre le features e diventare l'input della **testa** di classificazione
+- **Transfer Learning**: il feature extractor viene scaricato (modello pre-trained) e viene usato **solo** per estrarre le features e diventare l'input della **testa** di classificazione
 - **Fine Tuning**: il feature extractor viene **rifinito** durante il processo di train, quindi non sarà solo l'input della **testa**, ma diventerà parte dell'architettura da **allenare**.
 
 ---

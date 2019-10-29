@@ -240,7 +240,7 @@ Come visualizziamo 4 dimensioni sullo stesso grafico? E invece 784?
 
 ---
 
-Per un dataset a bassa dimensionalità come l'Iris, possiamo ricorrdere ad una tecnica **manuale** di visualizzazione dei dati, che che ci permette di avere un'idea del dataset con il quale stiamo lavorando.
+Per un dataset a bassa dimensionalità come l'Iris, possiamo ricorrere ad una tecnica **manuale** di visualizzazione dei dati, che che ci permette di avere un'idea del dataset con il quale stiamo lavorando.
 
 Come prima cosa, assegniamo un colore distinto ad ogni diversa classe:
 
@@ -268,7 +268,7 @@ Quest'ultimo grafico, mostra che **esistono tre partizioni naturali (cluster)** 
 
 ---
 
-> L'obiettivo degli algoritmi di classificazione è di apprendere autonomamente quali sono le **feature** (caratteristiche, dimensioni) discriminative, così da **apprendere una funzione** in grado di classificare correttamente elementi apparteneti a classi differenti.
+> L'obiettivo degli algoritmi di classificazione è di apprendere autonomamente quali sono le **features** (caratteristiche, dimensioni) discriminative, così da **apprendere una funzione** in grado di classificare correttamente elementi apparteneti a classi differenti.
 
 ---
 
@@ -305,7 +305,7 @@ $$ || p - q_i || = \left( \sum_{j=0}^{D-1}|p_{j}-q_{i,j}|^{p}\right)^\frac{1}{p}
 ---
 
 - Quando k-NN è applicato a problemi di classificazione, il punto p viene classificato in base al voto dei suoi k vicini
-- Quand k-NN è applicato a problemi di regressione, l'output dell'algoritmo è la media dei k-NN.
+- Quando k-NN è applicato a problemi di regressione, l'output dell'algoritmo è la media dei k-NN.
 
 ---
 
@@ -460,7 +460,7 @@ $$ \frac{TP}{TF + FN} $$
 
 #### Mean absolute error
 
-MAE (errore medio assouto) è la media delle differenza assolute tra il valore (classe, o valore numerico) reale e quello predetto.
+MAE (errore medio assouto) è la media delle differenze assolute tra il valore (classe, o valore numerico) reale e quello predetto.
 
 È una metrica applicabile anche ai classificatori, ma usualmente viene usata per i **regressori**.
 
@@ -498,9 +498,9 @@ Questa relazione è, solitaente, anche l'obiettivo che vogliamo **minimizzare** 
 
 #### Loss function
 
-La funzione che lega i dati osservati e quelli predetti, è detta **loss function** (funzione perdita).
+La funzione che lega i dati osservati e quelli predetti, è detta **loss function** (funzione di perdita).
 
-L'obiettivo di ogni algoritmo di machine learning espresso come algoritmo di ottimizzazione (come vedremo a breve) è quello di **minimizzare la perdita**.
+L'obiettivo di ogni algoritmo di machine learning espresso come algoritmo di ottimizzazione (come vedremo a breve) è quello di **minimizzare la perdita di informazione**.
 
 <br /> <br />
 
@@ -574,7 +574,7 @@ Spesso dimenticato, ma **di fondamentale importanza**, è il termine che permett
 
 A differenza dei metodi tradizionali, le reti neurali sono estremamente **flessibili**.
 
-Un singola rete neurale (input -> rete -> output) è in grado al massimo di trovare una singola ipersuperfificie, e quindi apprendere un solo decision boundary.
+Un singola rete neurale (input -> rete -> output) è in grado al massimo di trovare una singola ipersuperficie, e quindi apprendere un solo decision boundary.
 
 ![single-layer](images/single-layer.png)
 
@@ -592,11 +592,11 @@ Apprendiamo, quindi **una funzione** che può essere vista come una generica **t
 
 <br />
 
-Apprendere trasofmrazioni da uno spazio all'altro e **molto potente** in quanto permette di **ridurre la complessità** dei problemi, trasferendoli da un dominio altamente dimensionale ad uno bassa dimensionalità.
+Apprendere trasformazioni da uno spazio all'altro e **molto potente** in quanto permette di **ridurre la complessità** dei problemi, trasferendoli da un dominio altamente dimensionale ad uno bassa dimensionalità.
 
 ---
 
-### Reti complementamente connesse
+### Reti completamente connesse
 
 ![multi-layer](images/multi-layer.png)
 
@@ -606,7 +606,7 @@ $$ x = \begin{pmatrix}x_0\\ x_1 \\ \cdots \\ x_{D-1} \end{pmatrix} , W \in \math
 
 <br />
 
-L'output di un layer complemtamente connesso che **trasforma** un input **D-dimensionale** in un valore **M-dimensionale** è dato da:
+L'output di un layer completamente connesso che **trasforma** un input **D-dimensionale** in un valore **M-dimensionale** è dato da:
 
 <br />
 
